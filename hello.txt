@@ -1,2 +1,2 @@
-Hello Git
-This is feature branch
+101, Rahul Sharma, AI & Data Science, Third Year
+102, Priya Patil, Computer Engineering, Second Year
