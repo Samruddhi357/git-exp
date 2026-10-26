@@ -40,3 +40,36 @@ git log --oneline --all --graph
 ```
 
 **Conclusion:** Basic Git operations, including repository initialization, staging, committing, branching, merging, pushing to GitHub, and viewing commit history, were performed successfully.
+
+
+
+Step 1: Start Docker Desktop
+1. Open Docker Desktop. 2. Wait until Docker Engine is running. 3. Open Windows PowerShell.
+Check Docker version: docker --version 
+Step 2: Create Project Folder
+mkdir "$HOME\Documents\DockerDemo"
+cd "$HOME\Documents\DockerDemo"
+Step 3: Create Java Program Open Notepad, type the following code, and save it as HelloWorld.java inside the DockerDemo folder.
+public class HelloWorld {
+    public static void main(String[] args) {         
+          System.out.println("Hello Docker World");
+} }
+Step 4: Create Dockerfile Open Notepad, type the following content, and save it as Dockerfile (without a .txt extension) inside the DockerDemo folder.
+FROM eclipse-temurin:21-jdk
+WORKDIR /app
+COPY HelloWorld.java 
+RUN javac HelloWorld.java
+CMD ["java", "HelloWorld"] 
+Step 5: Verify Project Files
+dir
+Step 6: Build Docker Image
+docker build -t dockerdemo . 
+Step 7: Verify Docker Image
+docker images
+Step 8: Run Docker Container
+docker run dockerdemo
+docker ps -a
+Step 9: Verify Using Docker Desktop
+1. Open Docker Desktop.2. Click Containers.
+3. Find the container created from the dockerdemo image. 4. Open the container details or Logs.
+5. Verify that the output is Hello Docker World.
